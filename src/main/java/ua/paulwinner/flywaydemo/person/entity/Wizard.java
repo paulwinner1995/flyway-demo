@@ -10,12 +10,12 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "PERSON")
-public class Person implements Serializable {
+@Table(name = "WIZARD")
+public class Wizard implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "PERSON_ID")
+    @Column(name = "WIZARD_ID")
     private Long id;
 
     @Column(name = "FIRST_NAME", nullable = false)
@@ -24,16 +24,10 @@ public class Person implements Serializable {
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
-    @Column(name = "ADDRESS", nullable = false)
-    private String address;
+    @Column(name = "SCHOOL", nullable = false)
+    private String school;
 
-    @Column(name = "PHONE_NUMBER", nullable = false)
-    private String phoneNumber;
-
-    @Column(name = "EMAIL", nullable = false)
-    private String email;
-
-    public Person() {}
+    public Wizard() {}
 
     public Long getId() {
         return id;
@@ -59,28 +53,12 @@ public class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getAddress() {
-        return address;
+    public String getSchool() {
+        return school;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
+    public void setSchool(String school) {
+        this.school = school;
     }
 
     @Override
@@ -94,13 +72,13 @@ public class Person implements Serializable {
             return true;
         }
 
-        if (!(obj instanceof Person)) {
+        if (!(obj instanceof Wizard)) {
             return false;
         }
 
-        Person person = (Person) obj;
+        Wizard wizard = (Wizard) obj;
 
-        return Objects.equals(person.getFirstName(), this.firstName) &&
-                Objects.equals(person.getLastName(), this.lastName);
+        return Objects.equals(wizard.getFirstName(), this.firstName) &&
+                Objects.equals(wizard.getLastName(), this.lastName);
     }
 }
