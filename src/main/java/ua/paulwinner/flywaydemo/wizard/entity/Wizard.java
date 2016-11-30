@@ -1,10 +1,14 @@
 package ua.paulwinner.flywaydemo.wizard.entity;
 
+import ua.paulwinner.flywaydemo.school.entity.School;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Objects;
@@ -25,7 +29,11 @@ public class Wizard implements Serializable {
     private String lastName;
 
     @Column(name = "SCHOOL", nullable = false)
-    private String school;
+    private String schoolName;
+
+    @ManyToOne
+    @JoinColumn(name = "SCHOOL_ID", referencedColumnName = "SCHOOL_ID")
+    private School school;
 
     public Wizard() {}
 
@@ -53,11 +61,19 @@ public class Wizard implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getSchool() {
+    public String getSchoolName() {
+        return schoolName;
+    }
+
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
+    public School getSchool() {
         return school;
     }
 
-    public void setSchool(String school) {
+    public void setSchool(School school) {
         this.school = school;
     }
 
