@@ -1,4 +1,4 @@
-package ua.paulwinner.flywaydemo.person.entity;
+package ua.paulwinner.flywaydemo.wizard.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
