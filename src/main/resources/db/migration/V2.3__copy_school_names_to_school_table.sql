@@ -1,0 +1,23 @@
+INSERT INTO SCHOOL(NAME) VALUES (
+  (
+    SELECT wz.SCHOOL
+    FROM WIZARD AS wz
+    WHERE wz.LAST_NAME = 'Potter'
+  )
+);
+
+INSERT INTO SCHOOL(NAME) VALUES (
+  (
+    SELECT wz.SCHOOL
+    FROM WIZARD AS wz
+    WHERE wz.LAST_NAME = 'Krum'
+  )
+);
+
+INSERT INTO SCHOOL(NAME) VALUES (
+  (
+    SELECT wz.SCHOOL
+    FROM WIZARD AS wz
+    WHERE wz.LAST_NAME = 'Delacour'
+  )
+);

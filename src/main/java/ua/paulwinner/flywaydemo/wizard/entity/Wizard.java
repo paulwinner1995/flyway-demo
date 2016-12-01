@@ -28,9 +28,6 @@ public class Wizard implements Serializable {
     @Column(name = "LAST_NAME", nullable = false)
     private String lastName;
 
-    @Column(name = "SCHOOL", nullable = false)
-    private String schoolName;
-
     @ManyToOne
     @JoinColumn(name = "SCHOOL_ID", referencedColumnName = "SCHOOL_ID")
     private School school;
@@ -59,14 +56,6 @@ public class Wizard implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getSchoolName() {
-        return schoolName;
-    }
-
-    public void setSchoolName(String schoolName) {
-        this.schoolName = schoolName;
     }
 
     public School getSchool() {
